@@ -2,8 +2,8 @@
 
 ## Overview
 
-This is Simple graphql server to utilize the power of graphql
-This is a simple backend for managing book and their authors, I used the graphql server to take hands on experiance of graphql by building this project
+This is Simple graphql server to utilize the power of graphql.`/n`
+This is a simple backend for managing book and their Authors, I used the graphql server to take hands on experiance of graphql by building this project
 
 ## Tech Stack
 
@@ -30,8 +30,8 @@ Before you begin, ensure you have the following installed:
 
 ## Available Scripts
 
-"start": "node build/index.js",
-"dev": "tsc-watch --onSuccess \"npm run start\""
+-"start": "node build/index.js"
+-"dev": "tsc-watch --onSuccess \"npm run start\""
 
 # Quick Start
 
