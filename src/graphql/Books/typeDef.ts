@@ -4,6 +4,7 @@ const bookTypeDef = `
         title: String!
         description: String!
         published: Boolean!
+        author: Author!
         createdAt: String!
         updatedAt: String!
     }

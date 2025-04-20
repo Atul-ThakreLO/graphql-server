@@ -1,4 +1,5 @@
 const bookQuery = `
-    book: [Book!]!
+    books: [Book!]!
+    book(id: ID!): Book
 `;
 export default bookQuery;

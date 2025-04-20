@@ -8,8 +8,11 @@ interface Author {
 
 const authorResolver = {
   Query: {
-    authors: async (_: any, args: Author):Promise<Author[]> => {
+    authors: async (_: any, args: Author): Promise<Author[]> => {
       return author;
+    },
+    author: async (_: any, { id }: any): Promise<Author | undefined> => {
+      return author.find((a) => a.id == id);
     },
   },
   Mutation: {
