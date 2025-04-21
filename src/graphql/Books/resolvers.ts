@@ -16,7 +16,7 @@ const bookResolvers = {
     books: async (_: any, args: Book): Promise<Book[]> => {
       return books;
     },
-    book: async (_: any, { id }: any): Promise<Book | undefined> => {
+    book: async (_: any, { id }: Book): Promise<Book | undefined> => {
       return books.find((b) => b.id === id);
     },
   },

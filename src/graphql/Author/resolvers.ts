@@ -1,4 +1,4 @@
-import { author } from "../../dummy-db/authorData";
+import { Context } from "../..";
 
 interface Author {
   id: string;
@@ -8,17 +8,34 @@ interface Author {
 
 const authorResolver = {
   Query: {
-    authors: async (_: any, args: Author): Promise<Author[]> => {
-      return author;
+    authors: async (
+      _: any,
+      args: Author,
+      context: Context
+    ): Promise<Author[]> => {
+      return await context.prisma.author.findMany();
     },
-    author: async (_: any, { id }: any): Promise<Author | undefined> => {
-      return author.find((a) => a.id == id);
+    author: async (
+      _: any,
+      { id }: Author,
+      context: Context
+    ): Promise<Author | null> => {
+      return await context.prisma.author.findUnique({
+        where: {
+          id: id,
+        },
+      });
     },
   },
   Mutation: {
-    createAuthor: async (_: any, args: Author): Promise<String> => {
-      author.push(args);
-      return args.id;
+    createAuthor: async (
+      _: any,
+      args: Author,
+      context: Context
+    ): Promise<Author> => {
+      return await context.prisma.author.create({
+        data: args,
+      });
     },
   },
 };
