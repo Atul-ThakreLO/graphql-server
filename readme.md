@@ -12,6 +12,9 @@ This is a simple backend for managing book and their Authors, I used the graphql
 - node with express
 - Graphql
 - Apollo Server
+- PostgreSQL
+- Prisma
+- Docker
 
 ## Prerequisites
 
@@ -20,6 +23,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (version 16.0 or higher)
 - npm (version 7.0 or higher) or yarn
 - Git
+- Docker
 
 ## Contributing
 
@@ -49,6 +53,12 @@ cd [project-name]
 npm install
 # or
 yarn
+```
+
+### Docker
+
+```bash
+docker compose -f docker.compose.yml up -d
 ```
 
 ### Development
