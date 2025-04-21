@@ -3,7 +3,7 @@ const authorTypes = `#gql
         id: ID!
         name: String!
         password: String!
-        books: Book
+        books: [Book]
     }
 `;
 
