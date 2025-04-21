@@ -1,0 +1,45 @@
+# services:
+#   postgres:
+#     container_name: postgres_container
+#     image: postgres:17
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSSWORD: Atul304**
+#       POSTGRES_DB: postgres
+#     ports: -"5432:5432"
+#     volumes:
+#       -postgres_data/var/lib/postgresql/data
+#     networks:
+#       - postgres_network
+
+# volumes:
+#   postgres_data:
+#     name: postgres_data
+
+# networks:
+#   postgres_network: 
+#     name: postgres_network
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - postgres_network
+
+volumes:
+  postgres_data:
+
+networks:
+  postgres_network:
